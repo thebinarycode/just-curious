@@ -20,7 +20,9 @@ def calculate_steps(number: int, needvisualization=False) -> int:
 def plotsteps(totalsteps, valuechanges):
     steps = [num for num in range(totalsteps + 1)]
     plt.plot(steps, valuechanges, color="blue", linestyle="dotted", marker=".", markersize=10, markerfacecolor="red",
-             markeredgecolor="red", label=f"max value reached: {max(valuechanges)}")
+             markeredgecolor="red")
+    plt.plot([], [], label=f"max value reached: {max(valuechanges)}")
+    plt.plot([], [], label=f"total steps taken: {len(valuechanges)}")
     plt.grid(True)
     plt.xlabel("steps")
     plt.ylabel("value changes")
